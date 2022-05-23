@@ -1,23 +1,21 @@
 {
-  "name": "c-sar",
+  "name": "c-sar_backend",
   "version": "1.0.0",
-  "description": "Proyecto web para codificar o decodificar textos usando cifrado césar.",
+  "description": "Backend",
   "main": "app.js",
   "scripts": {
-    "test": "test",
-    "dev" : "nodemon app.js",
-    "start": "node app.js"
+    "test": "test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Paula2208/C-Sar_Backend.git"
   },
-  "author": "Paula Guzman, Esteban Umbarila",
+  "author": "Paula Guzmán, Esteban Umbarila",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Paula2208/C-Sar/issues"
+    "url": "https://github.com/Paula2208/C-Sar_Backend/issues"
   },
-  "homepage": "https://github.com/Paula2208/C-Sar#readme",
+  "homepage": "https://github.com/Paula2208/C-Sar_Backend#readme",
   "dependencies": {
     "express": "^4.18.1"
   },
