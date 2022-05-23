@@ -1,0 +1,28 @@
+{
+  "name": "c-sar",
+  "version": "1.0.0",
+  "description": "Proyecto web para codificar o decodificar textos usando cifrado césar.",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "dev" : "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paula2208/C-Sar.git"
+  },
+  "author": "Paula Guzman, Esteban Umbarila",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paula2208/C-Sar/issues"
+  },
+  "homepage": "https://github.com/Paula2208/C-Sar#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.16"
+  }
+}
