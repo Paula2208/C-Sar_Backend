@@ -1,7 +1,7 @@
 {
   "name": "c-sar_backend",
   "version": "1.0.0",
-  "description": "Backend",
+  "description": "backend",
   "main": "app.js",
   "scripts": {
     "test": "test"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Paula2208/C-Sar_Backend.git"
   },
-  "author": "Paula Guzmán, Esteban Umbarila",
+  "author": "Paula Guzman, Esteban Umbarila",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Paula2208/C-Sar_Backend/issues"
