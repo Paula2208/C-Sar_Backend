@@ -1,8 +1,8 @@
-const c_encrypt = (num, key, alpha) => {
-    return (num + key) % alpha;
+const c_decrypt = (num, key, alpha) => {
+    return (num - key) % alpha;
 };
 
-const encrypt = (numArray, key, alpha) => {
+const decrypt = (numArray, key, alpha) => {
     return new Promise((resolve, reject) => {
         let result = [];
         let e;
@@ -11,12 +11,10 @@ const encrypt = (numArray, key, alpha) => {
                 result.push(element);
             }
             else{
-                e = c_encrypt(element, key, alpha);
+                e = c_decrypt(element, key, alpha);
                 result.push(e);
             }
         });
         resolve(result);
     })
 };
-
-module.exports = {encrypt};

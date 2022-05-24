@@ -1,34 +1,20 @@
-const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n','ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'á', 'é', 'í', 'ó', 'ú'];
-
-//No se toman en cuenta las mayúsculas
+const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n','ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 const indexEspagnol = (letter) => {
     if(!alphabet.includes(letter)){
-        return marks(letter);
+        return 'Not available';
     }
     else{
         return alphabet.indexOf(letter);
     }
 };
 
-const marks = (m) => {
-    if(letter === ' '){
-        return -2;
-    }
-    if(letter === '.'){
-        return -3;
-    }
-    if(letter === ','){
-        return -4;
-    }
-    if(letter === ':'){
-        return -5;
-    }
-    if(letter === ';'){
-        return -6;
+const letEspagnol = (id) => {
+    if(!(id === ' ')){
+        return alphabet[id]
     }
     else{
-        return `Not available`;
+        return ' ';
     }
 };
 
@@ -38,13 +24,18 @@ const array = (paragraph) => {
         const digits = [];
 
         for(let s of p){
-            let d = indexEspagnol(s);
-            if(!(d === 'Not available')){
-                digits.push(d);
+            if(s === ' '){
+                digits.push(s);
             }
             else{
-                reject(`Character ${s} not available.`);
-                return;
+                let d = indexEspagnol(s);
+                if(!(d === 'Not available')){
+                    digits.push(d);
+                }
+                else{
+                    reject(`Caracter ${s} no disponible.`);
+                    return;
+                }
             }
         }
 
@@ -53,7 +44,7 @@ const array = (paragraph) => {
     })
 };
 
-export const digitsEnglish = (text) => {
+const digitsEspagnol = (text) => {
     return new Promise((resolve, reject) => {
         array(text)
             .then((results) => {
@@ -67,3 +58,20 @@ export const digitsEnglish = (text) => {
             });
     })
 };
+
+const alphaLenght = () => {
+    return alphabet.length;
+};
+
+const letterEspagnol = (nums) => {
+    return new Promise((resolve,reject) => {
+        let letters = '';
+        nums.forEach((n) => {
+            let s = letEspagnol(n);
+            letters = letters + s;
+        })
+        resolve(letters);
+    })
+};
+
+module.exports = {alphaLenght, letterEspagnol, digitsEspagnol};

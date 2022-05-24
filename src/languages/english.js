@@ -1,34 +1,20 @@
 const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-//No se toman en cuenta las tildes ni mayúsculas
-
-const indexInglish = (letter) => {
+const indexEnglish = (letter) => {
     if(!alphabet.includes(letter)){
-        return marks(letter);
+        return 'Not available';
     }
     else{
         return alphabet.indexOf(letter);
     }
 };
 
-const marks = (m) => {
-    if(letter === ' '){
-        return -2;
-    }
-    if(letter === '.'){
-        return -3;
-    }
-    if(letter === ','){
-        return -4;
-    }
-    if(letter === ':'){
-        return -5;
-    }
-    if(letter === ';'){
-        return -6;
+const letEnglish = (id) => {
+    if(!(id === ' ')){
+        return alphabet[id]
     }
     else{
-        return `Not available`;
+        return ' ';
     }
 };
 
@@ -38,13 +24,18 @@ const array = (paragraph) => {
         const digits = [];
 
         for(let s of p){
-            let d = indexInglish(s);
-            if(!(d === 'Not available')){
-                digits.push(d);
+            if(s === ' '){
+                digits.push(s);
             }
             else{
-                reject(`Character ${s} not available.`);
-                return;
+                let d = indexEnglish(s);
+                if(!(d === 'Not available')){
+                    digits.push(d);
+                }
+                else{
+                    reject(`Character ${s} not available.`);
+                    return;
+                }
             }
         }
 
@@ -53,7 +44,7 @@ const array = (paragraph) => {
     })
 };
 
-export const digitsEnglish = (text) => {
+const digitsEnglish = (text) => {
     return new Promise((resolve, reject) => {
         array(text)
             .then((results) => {
@@ -67,3 +58,20 @@ export const digitsEnglish = (text) => {
             });
     })
 };
+
+const alphaLenght = () => {
+    return alphabet.length;
+};
+
+const letterEnglish = (nums) => {
+    return new Promise((resolve,reject) => {
+        let letters = '';
+        nums.forEach((n) => {
+            let s = letEnglish(n);
+            letters = letters + s;
+        })
+        resolve(letters);
+    })
+};
+
+module.exports = {alphaLenght, letterEnglish, digitsEnglish};
