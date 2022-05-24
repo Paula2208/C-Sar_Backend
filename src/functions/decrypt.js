@@ -18,3 +18,5 @@ const decrypt = (numArray, key, alpha) => {
         resolve(result);
     })
 };
+
+module.exports = {decrypt};

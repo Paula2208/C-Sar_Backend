@@ -6,6 +6,8 @@ const {encryptEsp, encryptEng} = require('./Routes/postEncrypt');
 const app = express();
 const port = 2002;
 
+app.use(express.json());
+
 app.get('/',  (req, res) => {
     res.send('<h1> holi </h1> <p> Bueno esto si funcionó </p>');
 });
