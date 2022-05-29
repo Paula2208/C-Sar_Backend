@@ -1,21 +1,12 @@
 const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n','ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 const indexEspagnol = (letter) => {
-    if(!alphabet.includes(letter)){
-        return 'Not available';
-    }
-    else{
-        return alphabet.indexOf(letter);
-    }
+    const index = alphabet.indexOf(letter);
+    return (index === -1) ? 'Not available' : index;
 };
 
 const letEspagnol = (id) => {
-    if(!(id === ' ')){
-        return alphabet[id]
-    }
-    else{
-        return ' ';
-    }
+    return (id !== ' ') ? alphabet[id] : ' ';
 };
 
 const array = (paragraph) => {
@@ -29,7 +20,7 @@ const array = (paragraph) => {
             }
             else{
                 let d = indexEspagnol(s);
-                if(!(d === 'Not available')){
+                if(d !== 'Not available'){
                     digits.push(d);
                 }
                 else{

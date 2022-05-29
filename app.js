@@ -1,12 +1,14 @@
 const express = require('express');
+const cors = require('cors');
 const {prueba} = require('./Routes/getPrueba');
 const {decryptEsp, decryptEng} = require('./Routes/postDecrypt');
 const {encryptEsp, encryptEng} = require('./Routes/postEncrypt');
 
 const app = express();
-const port = 2002;
+const port = process.env.PORT || 2002;
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/',  (req, res) => {
     res.send('<h1> holi </h1> <p> Bueno esto si funcionó </p>');
