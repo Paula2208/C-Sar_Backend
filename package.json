@@ -20,7 +20,8 @@
   "homepage": "https://github.com/Paula2208/C-Sar_Backend#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "heroku": "^7.60.2"
   },
   "devDependencies": {
     "jest": "^28.1.0",

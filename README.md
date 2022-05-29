@@ -5,37 +5,41 @@ Backend del Proyecto web para codificar o decodificar textos usando cifrado cés
 ## Endpoints
 
 ### URL
-http://localhost:2002/
+-> Using Heroku
+-> Puerto por defecto: 2002
 
-### Body Ejemplo
+https://tranquil-fortress-58689.herokuapp.com/
+
+
+#### Body Ejemplo
 {
     "text" : "Hola Mundo",
     "base" : 3
 }
 
-### Decrypt response
+#### Decrypt response
 {
     "decrypt": "krñd oxpgr"
 }
 
-### Encrypt response
+#### Encrypt response
 {
     "encrypt": "hola mundo"
 }
 
-### POST /decrypt/esp
+##### POST /decrypt/esp
 Desencriptar textos en español.
 
-### POST /decrypt/eng
+##### POST /decrypt/eng
 Desencriptar textos en inglés.
 
-### POST /encrypt/esp
+##### POST /encrypt/esp
 Encriptar textos en español.
 
-### POST /encrypt/eng
+##### POST /encrypt/eng
 Encriptar textos en inglés.
 
-### Status
+#### Status
 **Success** : 200
 **Failed** : 400
 
